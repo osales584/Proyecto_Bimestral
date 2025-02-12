@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "18c4ebdf-34ba-453e-a429-f0754c751286",
+		"name": "API-Proyecto Bimestral",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37645671"
+	},
+	"item": [
+		{
+			"name": "Administrador",
+			"item": [
+				{
+					"name": "AUTH",
+					"item": [
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Oliver",
+											"type": "text"
+										},
+										{
+											"key": "surname",
+											"value": "Sales",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "osales",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "sales@gamail.com",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "Oliver123*",
+											"type": "text"
+										},
+										{
+											"key": "role",
+											"value": "CLIENT_ROLE",
+											"type": "text"
+										},
+										{
+											"key": "profilePicture",
+											"type": "file",
+											"src": "/C:/Users/olive/Downloads/like.jpg"
+										}
+									]
+								},
+								"url": "http://127.0.0.1:3002/apiWeb/v1/auth/register"
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"johan@gamail.com\",\r\n    \"password\": \"Johan123*\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://127.0.0.1:3002/apiWeb/v1/auth/login"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "USER",
+					"item": [
+						{
+							"name": "Buscar un usuario por ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FjYTk2NTU5ZjU1OTM1YWQxNDc1YmUiLCJpYXQiOjE3MzkzNzUwNTMsImV4cCI6MTczOTM3ODY1M30.C49McZpvNvXjvbOnTcUfbM0MAmMz_zNa0-ZWtLBnpS0"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://127.0.0.1:3002/apiWeb/v1/user/findUser/67ac789873087f491cffa5ce"
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar usuario",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FjZjMxMTdhZTY5NzAzMjVkMjk3MGMiLCJpYXQiOjE3MzkzOTEwNDcsImV4cCI6MTczOTM5NDY0N30.5WVg5u-R_BWGQuHFhaJe4d_K04g9CYgoiPJXCMmcHtg"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": "http://127.0.0.1:3002/apiWeb/v1/user/deleteUser/67ad070e8795953853ecb7d4"
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Usuarios",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://127.0.0.1:3002/apiWeb/v1/user/"
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar usuario",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": ""
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"role\": \"CLIENT_ROLE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://127.0.0.1:3002/apiWeb/v1/user/updateUser/"
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar foto",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FkMjg0MjVlMzNlZWJkOWQ5YjUwZjciLCJpYXQiOjE3Mzk0MDEzMDgsImV4cCI6MTczOTQwNDkwOH0.l6DWSRbQ1Pnb6ciRtYIXIncrEwzN6VnvfCVpFm1z0Js"
+									}
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "profilePicture",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": "http://127.0.0.1:3002/apiWeb/v1/user/updateProfilePicture/"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "CATEGORY",
+					"item": [
+						{
+							"name": "Agregar Categoria",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FkMjg0MjVlMzNlZWJkOWQ5YjUwZjciLCJpYXQiOjE3Mzk0MDEzMDgsImV4cCI6MTczOTQwNDkwOH0.l6DWSRbQ1Pnb6ciRtYIXIncrEwzN6VnvfCVpFm1z0Js"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Ropa\",\r\n    \"description\" : \"Ropa para hombres, mujeres y niños, incluyendo camisas, pantalones y accesorios.\",\r\n    \"productsCount\": 7\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://127.0.0.1:3002/apiWeb/v1/category/saveCategory"
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Categorias",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://127.0.0.1:3002/apiWeb/v1/category/"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
