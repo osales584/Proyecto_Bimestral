@@ -33,6 +33,11 @@ export const loginValidator = [
     handleErrors
 ]
 
+export const getUsersValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE")
+]
+
 export const getUserByIdValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE"),
@@ -51,9 +56,18 @@ export const deleteUserValidator = [
     handleErrors
 ]
 
-export const updateUserValidator = [
+export const updateUserRoleValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE"),
+    param("uid", "No es un ID válido").isMongoId(),
+    param("uid").custom(userExists),
+    validarCampos,
+    handleErrors
+]
+
+export const updateUserValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE", "CLIENT_ROLE"),
     param("uid", "No es un ID válido").isMongoId(),
     param("uid").custom(userExists),
     validarCampos,

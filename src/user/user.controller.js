@@ -81,11 +81,65 @@ export const deleteUser = async (req, res) => {
     }
 }
 
+//Actualizar rol de usuario
+export const updateUserRole = async (req, res) => {
+    try {
+        const { uid } = req.params;
+        const {role} = req.body;
+
+        const user = await User.findById(uid);
+
+        if(!user){
+            return res.status(404).json({
+                success: false,
+                message: "Usuario no encontrado"
+            })
+        }
+
+        if (req.usuario.role === 'ADMIN_ROLE') {
+            const userToUpdate = await User.findById(uid);
+
+            if (userToUpdate.role === 'ADMIN_ROLE') {
+                return res.status(403).json({
+                    success: false,
+                    msg: 'No puedes modificar el rol de otro administrador.'
+                });
+            }
+        }
+
+        const userRole = await User.findByIdAndUpdate(uid, { role: role}, { new: true});
+
+        res.status(200).json({
+            success: true,
+            msg: 'Rol de Usuario Actualizado',
+            user: userRole,
+        });
+
+    } catch (err) {
+        res.status(500).json({
+            success: false,
+            msg: 'Error al actualizar rol del usuario',
+            error: err.message
+        });
+    }
+}
+
 //Actualizar usuario
 export const updateUser = async (req, res) => {
     try {
         const { uid } = req.params;
         const  data  = req.body;
+
+        if (req.usuario.role === 'ADMIN_ROLE', 'CLIENT_ROLE') {
+            const userToUpdate = await User.findById(uid);
+
+            if (userToUpdate.role === 'ADMIN_ROLE') {
+                return res.status(403).json({
+                    success: false,
+                    msg: 'No puedes modificar el rol de otro administrador.'
+                });
+            }
+        }
 
         const user = await User.findByIdAndUpdate(uid, data, { new: true });
 
