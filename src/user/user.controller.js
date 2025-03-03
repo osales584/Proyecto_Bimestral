@@ -63,9 +63,11 @@ export const getUsers = async (req, res) => {
 //Eliminar usuario
 export const deleteUser = async (req, res) => {
     try{
-        const { uid } = req
+        const { uid } = req.params;
         
-        const user = await User.findByIdAndUpdate(uid, {status: false}, {new: true})
+        const user = await User.findById(uid)
+
+        await User.findByIdAndDelete(uid)
 
         return res.status(200).json({
             success: true,
