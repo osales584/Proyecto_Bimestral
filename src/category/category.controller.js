@@ -5,12 +5,11 @@ import fs from "fs/promises"
 //Agregar categoria
 export const saveCategory  = async(req, res) => {
     try {
-        const { name, description, productsCount} = req.body;
+        const { name, description} = req.body;
 
         const newCategory = new Category({
             name,
-            description,
-            productsCount
+            description
         })
 
         await newCategory.save();

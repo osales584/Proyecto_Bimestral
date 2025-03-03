@@ -14,3 +14,8 @@ export const saveCategoryValidator = [
     deleteFileOnError,
     handleErrors
 ]
+
+export const getCategoryValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE")
+]
