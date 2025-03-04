@@ -55,5 +55,32 @@ export const getCategory = async(req,res) =>{
 }
 
 //Actualizar categoria
+export const updateCategory = async (req, res) => {
+    try {
+        const { idCategory } = req.params;
+        const data = req.body;
 
-//Elliminar categroria
+        const category = await Category.findOneAndUpdate({ idCategory }, data, { new: true });
+
+        if (!category) {
+            return res.status(404).json({
+                success: false,
+                message: "Categoría no encontrada"
+            });
+        }
+
+        return res.status(200).json({
+            success: true,
+            message: "Categoría actualizada",
+            category
+        });
+    } catch (err) {
+        return res.status(500).json({
+            success: false,
+            message: "Error al actualizar la categoría",
+            error: err.message
+        });
+    }
+};
+
+//Eliminar categroria

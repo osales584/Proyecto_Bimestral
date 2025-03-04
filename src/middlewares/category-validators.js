@@ -1,4 +1,5 @@
-import { body} from "express-validator";
+import { body, param } from "express-validator";
+import { categoryExists, categoryNameExists } from "../helpers/db-validators.js";
 import { validarCampos} from "./validate-fields.js";
 import { deleteFileOnError} from "./delete-file-on-error.js";
 import { handleErrors } from "./handle-errors.js";
@@ -19,3 +20,14 @@ export const getCategoryValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE")
 ]
+
+export const updateCategoryValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE"),
+    param("idCategory", "No es un ID válido").isMongoId(),
+    param("idCategory").custom(categoryExists),
+    param("name").optional().notEmpty().withMessage("El nombre no puede estar vacio"),
+    body("description").optional().notEmpty().withMessage("La descripción no puede estar vacía"),
+    validarCampos,
+    handleErrors
+];
