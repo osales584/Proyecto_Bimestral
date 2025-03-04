@@ -60,14 +60,7 @@ export const updateCategory = async (req, res) => {
         const { idCategory } = req.params;
         const data = req.body;
 
-        const category = await Category.findOneAndUpdate({ idCategory }, data, { new: true });
-
-        if (!category) {
-            return res.status(404).json({
-                success: false,
-                message: "Categoría no encontrada"
-            });
-        }
+        const category = await Category.findByIdAndUpdate(idCategory, data, { new: true });
 
         return res.status(200).json({
             success: true,
@@ -84,3 +77,28 @@ export const updateCategory = async (req, res) => {
 };
 
 //Eliminar categroria
+export const deleteCategory = async (req, res) => {
+    try {
+        const { idCategory } = req.params;
+        const category = await Category.findOneAndDelete(idCategory);
+
+        if (!category) {
+            return res.status(404).json({
+                success: false,
+                message: "Categoría no encontrada"
+            });
+        }
+        
+        return res.status(200).json({
+            success: true,
+            message: "Categoría eliminada",
+            category
+        });
+    } catch (err) {
+        return res.status(500).json({
+            success: false,
+            message: "Error al eliminar la categoría",
+            error: err.message
+        });
+    }
+}
