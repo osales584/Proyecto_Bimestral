@@ -15,10 +15,6 @@ const categorySchema = Schema({
         type: Boolean,
         default: true
     }, 
-    productsCount: {
-        type: Number,
-        default: 0
-    }
 },
 {
     versionKey: false,
