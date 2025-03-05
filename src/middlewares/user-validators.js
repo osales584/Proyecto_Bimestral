@@ -50,12 +50,6 @@ export const getUserByIdValidator = [
 export const deleteUserValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE", "CLIENT_ROLE"),
-    body('uid').custom((value, { req }) => {
-        if (req.usuario.uid !== value && req.usuario.role !== 'ADMIN_ROLE') {
-            throw new Error('No tienes permiso para eliminar este usuario');
-        }
-        return true;
-    }),
     param("uid").isMongoId().withMessage("No es un ID válido de MongoDB"),
     param("uid").custom(userExists),
     validarCampos,
@@ -74,12 +68,6 @@ export const updateUserRoleValidator = [
 export const updateUserValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE", "CLIENT_ROLE"),
-    body('uid').custom((value, { req }) => {
-        if (req.usuario.uid !== value && req.usuario.role !== 'ADMIN_ROLE') {
-            throw new Error('No tienes permiso para actualizar este usuario');
-        }
-        return true;
-    }),
     param("uid", "No es un ID válido").isMongoId(),
     param("uid").custom(userExists),
     validarCampos,

@@ -65,13 +65,6 @@ export const deleteUser = async (req, res) => {
     try {
         const { uid } = req.params;
 
-        if (req.usuario.uid !== uid && req.usuario.role !== 'ADMIN_ROLE') {
-            return res.status(403).json({
-                success: false,
-                msg: 'No tienes permiso para eliminar a otro usuario'
-            });
-        }
-
         const userToDelete = await User.findById(uid);
 
         if (userToDelete.role === 'ADMIN_ROLE') {
@@ -154,13 +147,6 @@ export const updateUser = async (req, res) => {
     try {
         const { uid } = req.params;
         const data = req.body;
-
-        if (req.usuario.uid !== uid && req.usuario.role !== 'ADMIN_ROLE') {
-            return res.status(403).json({
-                success: false,
-                msg: 'No tienes permiso para actualizar a otro usuario'
-            });
-        }
 
         if (data.role) {
             return res.status(400).json({
