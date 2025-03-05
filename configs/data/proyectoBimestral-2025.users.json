@@ -1,0 +1,139 @@
+[{
+  "_id": {
+    "$oid": "67c8b0bd2bce5f383d1d2295"
+  },
+  "name": "Super",
+  "surname": "Admin",
+  "username": "superadmin",
+  "email": "superadmin@voicesocial.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$fHjbeDNVneLdti0ZkUCxiw$6E33RviE+O+pbw4H/2ItkvKIO+iFBjTCkSs0R4cnYZM",
+  "phone": "12345678",
+  "role": "ADMIN_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8b0d02bce5f383d1d2299"
+  },
+  "name": "Oliver",
+  "surname": "Sales",
+  "username": "osales",
+  "email": "sales@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$iucZ4oYPMXcaJ3pUEUHfHg$KzxuZFDQ/bXT2mBMI4P51zrhi8f9RXGHk5PgJbDGxE4",
+  "profilePicture": null,
+  "phone": "12345678",
+  "role": "ADMIN_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8b1032bce5f383d1d229d"
+  },
+  "name": "Juan",
+  "surname": "Arevalo",
+  "username": "jarevalo",
+  "email": "arevalo@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$LXNvGc/C24tddw+GbxPEKA$xpUsByfTxKwMPFJy3GV4Deu2SrbaT1ZeuX+JzDUvenM",
+  "profilePicture": null,
+  "phone": "12345678",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8b1492bce5f383d1d22a1"
+  },
+  "name": "Ian",
+  "surname": "Villa",
+  "username": "fvilla",
+  "email": "villa@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$c/vgM6jkSxOhOPPpkc4qwQ$Y+ikeEvm0Igp9MR3mmayAQLA4hWkALcmeMItVuUWmF4",
+  "profilePicture": null,
+  "phone": "12345678",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8db24a4ad004540667fe9"
+  },
+  "name": "Arnold",
+  "surname": "Lopez",
+  "username": "alopez",
+  "email": "lopez@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$ttAxZTTu4oPHjFthkESGWA$Lu6lnssm74MMX9L9JgTEATmUe3GFRlgDenKB4EayvOA",
+  "profilePicture": null,
+  "phone": "12345678",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8db47a4ad004540667fed"
+  },
+  "name": "Julian",
+  "surname": "Alvarez",
+  "username": "jalvarez",
+  "email": "alvarez@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$KUfFNDoiygatjruqRXnorw$YA4cYHSwp3y87PWvpO8jpO4lw7lJ8NSKYGb6DUx+1DU",
+  "profilePicture": null,
+  "phone": "12345678",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8db72a4ad004540667ff1"
+  },
+  "name": "Steven",
+  "surname": "Torres",
+  "username": "storres",
+  "email": "torres@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$8CCLfyFB64dhWhFMuAnN7A$XQbW4dYX6n8wFsUj4/iuCp4VSxb4aC5NWH4Ws3QKX58",
+  "profilePicture": null,
+  "phone": "12345678",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8dbe7a4ad004540667ff8"
+  },
+  "name": "Williams",
+  "surname": "Palacios",
+  "username": "wpalacios",
+  "email": "palacios@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$IyLCLgEHddLbw6bg54lZRA$6whi7IaOnXff+06Vb6R1AhSbOGo8jfeRBQJfZy62xio",
+  "profilePicture": null,
+  "phone": "12345678",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8dc2ca4ad004540667ffc"
+  },
+  "name": "Johan",
+  "surname": "Tojin",
+  "username": "jtojin",
+  "email": "tojin@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$5dcdnJx8oYPiFo8RqQFh0w$GnialN8ar9PxplOSqvfHrREQiraoeEBu8RRkB6dwJS0",
+  "profilePicture": null,
+  "phone": "12345678",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8dc40a4ad004540668000"
+  },
+  "name": "Saul",
+  "surname": "Donis",
+  "username": "sdonis",
+  "email": "donis@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$ppTx8Tr9AR1VyiAdtx1wSw$Xmic9DoxfX/6jxPAX6eKrsOhSXMj0sU3Mj0b41rgcFY",
+  "profilePicture": null,
+  "phone": "12345678",
+  "role": "CLIENT_ROLE",
+  "status": true
+}]

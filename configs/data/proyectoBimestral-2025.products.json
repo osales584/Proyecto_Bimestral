@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "67c8dd8da4ad004540668027"
+  },
+  "name": "Auriculares Inalámbricos Bluetooth",
+  "description": "Auriculares con sonido HD, conexión Bluetooth 5.0 y batería de hasta 10 horas de duración.",
+  "price": 29.99,
+  "stock": 150,
+  "salesCount": 0,
+  "category": {
+    "$oid": "67c8dcada4ad004540668009"
+  },
+  "status": "true",
+  "createdAt": {
+    "$date": "2025-03-05T23:26:05.295Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-05T23:26:05.295Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c8dda0a4ad00454066802a"
+  },
+  "name": "Chaqueta de Cuero Hombre",
+  "description": "Chaqueta de cuero sintético de alta calidad, diseño moderno y elegante, ideal para cualquier ocasión.",
+  "price": 59.99,
+  "stock": 80,
+  "salesCount": 0,
+  "category": {
+    "$oid": "67c8dcb8a4ad00454066800c"
+  },
+  "status": "true",
+  "createdAt": {
+    "$date": "2025-03-05T23:26:24.526Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-05T23:26:24.526Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c8ddbda4ad00454066802d"
+  },
+  "name": "Set de Ollas Antiadherentes",
+  "description": "Juego de 5 ollas con revestimiento antiadherente, aptas para todo tipo de cocinas.",
+  "price": 89.99,
+  "stock": 50,
+  "salesCount": 0,
+  "category": {
+    "$oid": "67c8dcc1a4ad00454066800f"
+  },
+  "status": "true",
+  "createdAt": {
+    "$date": "2025-03-05T23:26:53.395Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-05T23:26:53.395Z"
+  }
+}]

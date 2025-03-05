@@ -7,100 +7,139 @@
 	},
 	"item": [
 		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Oliver",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Sales",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "osales",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "sales@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Oliver123*",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "ADMIN_ROLE",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": "http://127.0.0.1:3002/apiWeb/v1/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sales@gmail.com\",\r\n    \"password\": \"Oliver123*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://127.0.0.1:3002/apiWeb/v1/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Administrador",
 			"item": [
 				{
-					"name": "AUTH",
+					"name": "USER",
 					"item": [
 						{
-							"name": "Register",
+							"name": "Listar Usuarios",
 							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "name",
-											"value": "Oliver",
-											"type": "text"
-										},
-										{
-											"key": "surname",
-											"value": "Sales",
-											"type": "text"
-										},
-										{
-											"key": "username",
-											"value": "osales",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "sales@gamail.com",
-											"type": "text"
-										},
-										{
-											"key": "phone",
-											"value": "12345678",
-											"type": "text"
-										},
-										{
-											"key": "password",
-											"value": "Oliver123*",
-											"type": "text"
-										},
-										{
-											"key": "role",
-											"value": "CLIENT_ROLE",
-											"type": "text"
-										},
-										{
-											"key": "profilePicture",
-											"type": "file",
-											"src": "/C:/Users/olive/Downloads/like.jpg"
-										}
-									]
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4YjBkMDJiY2U1ZjM4M2QxZDIyOTkiLCJpYXQiOjE3NDEyMTY1MDYsImV4cCI6MTc0MTIzNDUwNn0.STFOjhG9GsgWOFVc7ML5fu2NqBsQ81xFNBZMm_v6SO0"
+									}
 								},
-								"url": "http://127.0.0.1:3002/apiWeb/v1/auth/register"
+								"method": "GET",
+								"header": [],
+								"url": "http://127.0.0.1:3002/apiWeb/v1/user/"
 							},
 							"response": []
 						},
-						{
-							"name": "Login",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"email\": \"johan@gamail.com\",\r\n    \"password\": \"Johan123*\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "http://127.0.0.1:3002/apiWeb/v1/auth/login"
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "USER",
-					"item": [
 						{
 							"name": "Buscar un usuario por ID",
 							"request": {
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FjYTk2NTU5ZjU1OTM1YWQxNDc1YmUiLCJpYXQiOjE3MzkzNzUwNTMsImV4cCI6MTczOTM3ODY1M30.C49McZpvNvXjvbOnTcUfbM0MAmMz_zNa0-ZWtLBnpS0"
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MTAwNzA5MGU3OGE1NjNhNDI5ZDMiLCJpYXQiOjE3NDEwMzM4NzIsImV4cCI6MTc0MTAzNzQ3Mn0.lYPbl5UaehJ6LZ_N7KPUxJdKpZwNIvaNvjb0xyEyupI"
 									}
 								},
 								"method": "GET",
 								"header": [],
-								"url": "http://127.0.0.1:3002/apiWeb/v1/user/findUser/67ac789873087f491cffa5ce"
+								"url": "http://127.0.0.1:3002/apiWeb/v1/user/findUser/67c615cae94af08e6c90bda0"
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar rol",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MTAwNzA5MGU3OGE1NjNhNDI5ZDMiLCJpYXQiOjE3NDEwMzQwODIsImV4cCI6MTc0MTAzNzY4Mn0.sMR4VqsPZPYrGnC3Lj61ve72VU7B012P6pxEGi-iIR4"
+									}
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"role\": \"ADMIN_ROLE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://127.0.0.1:3002/apiWeb/v1/user/updateUserRole/67c61684e94af08e6c90bdbc"
 							},
 							"response": []
 						},
@@ -110,21 +149,12 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FjZjMxMTdhZTY5NzAzMjVkMjk3MGMiLCJpYXQiOjE3MzkzOTEwNDcsImV4cCI6MTczOTM5NDY0N30.5WVg5u-R_BWGQuHFhaJe4d_K04g9CYgoiPJXCMmcHtg"
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ZjdlNDc1NzVmNzU5ODgwNzY5ZTYiLCJpYXQiOjE3NDExODc5MjcsImV4cCI6MTc0MTE5MTUyN30.WZqm3fHQYRC8zduJZaYQlRByyKqYM6oUBBdMf42hRms"
 									}
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": "http://127.0.0.1:3002/apiWeb/v1/user/deleteUser/67ad070e8795953853ecb7d4"
-							},
-							"response": []
-						},
-						{
-							"name": "Listar Usuarios",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": "http://127.0.0.1:3002/apiWeb/v1/user/"
+								"url": "http://127.0.0.1:3002/apiWeb/v1/user/deleteUser/67c86aa1a8f8831001e01ed9"
 							},
 							"response": []
 						},
@@ -134,21 +164,21 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": ""
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4YjBkMDJiY2U1ZjM4M2QxZDIyOTkiLCJpYXQiOjE3NDEyMTAyNzEsImV4cCI6MTc0MTIxMzg3MX0.Uan0hhok6b-8m7KY__ctJMcY4kt9ggzfrfGu7HBVcDI"
 									}
 								},
 								"method": "PUT",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"role\": \"CLIENT_ROLE\"\r\n}",
+									"raw": "{\r\n            \"surname\": \"Villa\",\r\n            \"username\": \"fvilla\",\r\n            \"email\": \"villa@gmail.com\"\r\n        }",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "http://127.0.0.1:3002/apiWeb/v1/user/updateUser/"
+								"url": "http://127.0.0.1:3002/apiWeb/v1/user/updateUser/67c8b1492bce5f383d1d22a1"
 							},
 							"response": []
 						},
@@ -158,7 +188,7 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FkMjg0MjVlMzNlZWJkOWQ5YjUwZjciLCJpYXQiOjE3Mzk0MDEzMDgsImV4cCI6MTczOTQwNDkwOH0.l6DWSRbQ1Pnb6ciRtYIXIncrEwzN6VnvfCVpFm1z0Js"
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M2MTAwNzA5MGU3OGE1NjNhNDI5ZDMiLCJpYXQiOjE3NDEwMzc4MzMsImV4cCI6MTc0MTA0MTQzM30.pdgbqGN13mC6zl9Ig1M8v5SZRJwqEBHIBS4Wss8MPts"
 									}
 								},
 								"method": "PATCH",
@@ -169,11 +199,11 @@
 										{
 											"key": "profilePicture",
 											"type": "file",
-											"src": []
+											"src": "/C:/Users/Informatica/Downloads/images.jpg"
 										}
 									]
 								},
-								"url": "http://127.0.0.1:3002/apiWeb/v1/user/updateProfilePicture/"
+								"url": "http://127.0.0.1:3002/apiWeb/v1/user/updateProfilePicture/67c620dbe94af08e6c90bdd8"
 							},
 							"response": []
 						}
@@ -188,14 +218,14 @@
 								"auth": {
 									"type": "bearer",
 									"bearer": {
-										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FkMjg0MjVlMzNlZWJkOWQ5YjUwZjciLCJpYXQiOjE3Mzk0MDEzMDgsImV4cCI6MTczOTQwNDkwOH0.l6DWSRbQ1Pnb6ciRtYIXIncrEwzN6VnvfCVpFm1z0Js"
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3NjYxNWM1ODc2YjIyNzljYzQxNmYiLCJpYXQiOjE3NDExMjUyNTUsImV4cCI6MTc0MTEyODg1NX0.IsVh8JRyXBLf5VLScA5af18JqxBHTQUwa4KV0igO8Wk"
 									}
 								},
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\" : \"Ropa\",\r\n    \"description\" : \"Ropa para hombres, mujeres y niños, incluyendo camisas, pantalones y accesorios.\",\r\n    \"productsCount\": 7\r\n}",
+									"raw": "{\r\n    \"name\" : \"Predeterminada\",\r\n    \"description\" : \"Categoria Predeterminada\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -209,13 +239,336 @@
 						{
 							"name": "Listar Categorias",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4YjBkMDJiY2U1ZjM4M2QxZDIyOTkiLCJpYXQiOjE3NDEyMTY1MDYsImV4cCI6MTc0MTIzNDUwNn0.STFOjhG9GsgWOFVc7ML5fu2NqBsQ81xFNBZMm_v6SO0"
+									}
+								},
 								"method": "GET",
 								"header": [],
 								"url": "http://127.0.0.1:3002/apiWeb/v1/category/"
 							},
 							"response": []
+						},
+						{
+							"name": "Actualizar Categoria",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3NjYxNWM1ODc2YjIyNzljYzQxNmYiLCJpYXQiOjE3NDExMjM2NDIsImV4cCI6MTc0MTEyNzI0Mn0.MtDbM6tSHzb_hUSBZ5JAgK0t99aJxf9eQ3zaL7i1nGQ"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Bebidas Refrescantes\",\r\n    \"description\" : \"Bebidas frías ideales para calmar la sed.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://127.0.0.1:3002/apiWeb/v1/category/updateCategory/67c7664cc5876b2279cc4176"
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar Categoria",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4NmFhMWE4Zjg4MzEwMDFlMDFlZDkiLCJpYXQiOjE3NDExODc3NjcsImV4cCI6MTc0MTE5MTM2N30.HfK87m1o7XhCPzx3C7VhWIzEKDpQw32KePfUXxkA1tI"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": "http://127.0.0.1:3002/apiWeb/v1/category/deleteCategory/67c7664cc5876b2279cc4176"
+							},
+							"response": []
 						}
 					]
+				},
+				{
+					"name": "PRODUCT",
+					"item": [
+						{
+							"name": "Agregar producto",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ZjdlNDc1NzVmNzU5ODgwNzY5ZTYiLCJpYXQiOjE3NDExNTgzNzcsImV4cCI6MTc0MTE3NjM3N30.4jv1taYa4J01mAnyD95Tpb4LCWAlBc5fZFY2MyB17yE"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Camiseta Negra Básica\",\r\n  \"description\": \"Camiseta de algodón 100%, color negro, perfecta para uso diario. Disponible en todas las tallas.\",\r\n  \"price\": 9.99,\r\n  \"stock\": 300,\r\n  \"salesCount\": 150,\r\n  \"category\": \"67c7f8167575f759880769ef\",  // Sustituye con un ID de categoría válido\r\n  \"status\": \"true\"\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://127.0.0.1:3002/apiWeb/v1/product/saveProduct"
+							},
+							"response": []
+						},
+						{
+							"name": "Listar producto",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ZjdlNDc1NzVmNzU5ODgwNzY5ZTYiLCJpYXQiOjE3NDExODYxNDUsImV4cCI6MTc0MTE4OTc0NX0.vCAViQ8wOLKKL7xWGfosx1CD2t3UQEA7kYQ5HROGro4"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://127.0.0.1:3002/apiWeb/v1/product/"
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar stock",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ZjdlNDc1NzVmNzU5ODgwNzY5ZTYiLCJpYXQiOjE3NDExNTgzNzcsImV4cCI6MTc0MTE3NjM3N30.4jv1taYa4J01mAnyD95Tpb4LCWAlBc5fZFY2MyB17yE"
+									}
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"stock\": 200\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://127.0.0.1:3002/apiWeb/v1/product/updateStock/67c7f8527575f759880769f4"
+							},
+							"response": []
+						},
+						{
+							"name": "Filtro de producto",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ZjdlNDc1NzVmNzU5ODgwNzY5ZTYiLCJpYXQiOjE3NDExODM1MzksImV4cCI6MTc0MTIwMTUzOX0.-2MHmnKGP5NAZqlrnMWE3kZaiRkBj696oY8v9oIy3ac"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3002/apiWeb/v1/product/products",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3002",
+									"path": [
+										"apiWeb",
+										"v1",
+										"product",
+										"products"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Camiseta",
+											"disabled": true
+										},
+										{
+											"key": "category",
+											"value": "Ropa",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "out-of-stock",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "top-selling",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Actualizar producto",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ZjdlNDc1NzVmNzU5ODgwNzY5ZTYiLCJpYXQiOjE3NDExNTgzNzcsImV4cCI6MTc0MTE3NjM3N30.4jv1taYa4J01mAnyD95Tpb4LCWAlBc5fZFY2MyB17yE"
+									}
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Playera negra \",\r\n  \"description\": \"Overside.\",\r\n  \"price\": 15.99,\r\n  \"salesCount\": 120\r\n}\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://127.0.0.1:3002/apiWeb/v1/product/updateProduct/67c802a0779f1bd2c4db9785"
+							},
+							"response": []
+						},
+						{
+							"name": "Eliminar producto",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ZjdlNDc1NzVmNzU5ODgwNzY5ZTYiLCJpYXQiOjE3NDExNTgzNzcsImV4cCI6MTc0MTE3NjM3N30.4jv1taYa4J01mAnyD95Tpb4LCWAlBc5fZFY2MyB17yE"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": "http://127.0.0.1:3002/apiWeb/v1/product/deleteProduct/67c802a0779f1bd2c4db9785"
+							},
+							"response": []
+						},
+						{
+							"name": "Inventario",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ZjdlNDc1NzVmNzU5ODgwNzY5ZTYiLCJpYXQiOjE3NDExNTgzNzcsImV4cCI6MTc0MTE3NjM3N30.4jv1taYa4J01mAnyD95Tpb4LCWAlBc5fZFY2MyB17yE"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:3002/apiWeb/v1/product/manageInventory",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "3002",
+									"path": [
+										"apiWeb",
+										"v1",
+										"product",
+										"manageInventory"
+									],
+									"query": [
+										{
+											"key": "action",
+											"value": "sale",
+											"disabled": true
+										},
+										{
+											"key": "action",
+											"value": "restock",
+											"disabled": true
+										},
+										{
+											"key": "action",
+											"value": "low-stock",
+											"disabled": true
+										},
+										{
+											"key": "idProduct",
+											"value": "67c7f8527575f759880769f4",
+											"disabled": true
+										},
+										{
+											"key": "quantity",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Explorar productos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3ZjdlNDc1NzVmNzU5ODgwNzY5ZTYiLCJpYXQiOjE3NDExODM1MzksImV4cCI6MTc0MTIwMTUzOX0.-2MHmnKGP5NAZqlrnMWE3kZaiRkBj696oY8v9oIy3ac"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:3002/apiWeb/v1/product/explore"
+					},
+					"response": []
+				},
+				{
+					"name": "Editar perfil",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4YjE0OTJiY2U1ZjM4M2QxZDIyYTEiLCJpYXQiOjE3NDEyMTAxOTEsImV4cCI6MTc0MTIxMzc5MX0.aGF0i53RVtRibPwC_XMc6buDbUbrDlnt3nwgGD_w3x0"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "ian2@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:3002/apiWeb/v1/user/updateUser/67c8b1492bce5f383d1d22a1"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar cuenta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M4YjE0OTJiY2U1ZjM4M2QxZDIyYTEiLCJpYXQiOjE3NDEyMDYxOTUsImV4cCI6MTc0MTIwOTc5NX0.UNOZaUAyRlhh6UPNNDmeuYh28Wu4_bHRhSZlj4dBwvI"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://127.0.0.1:3002/apiWeb/v1/user/deleteUser/67c8b1492bce5f383d1d22a1"
+					},
+					"response": []
 				}
 			]
 		}

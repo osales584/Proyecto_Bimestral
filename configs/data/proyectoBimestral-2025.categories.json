@@ -1,0 +1,80 @@
+[{
+  "_id": {
+    "$oid": "67c7664cc5876b2279cc4176"
+  },
+  "name": "Bebidas Refrescantes",
+  "description": "Bebidas frías ideales para calmar la sed.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c778ec8c7d2c71ecc78357"
+  },
+  "name": "Predeterminada",
+  "description": "Categoria Predeterminada",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8dcada4ad004540668009"
+  },
+  "name": "Electrónica",
+  "description": "Dispositivos y gadgets tecnológicos.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8dcb8a4ad00454066800c"
+  },
+  "name": "Ropa y Moda",
+  "description": "Prendas de vestir y accesorios de moda.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8dcc1a4ad00454066800f"
+  },
+  "name": "Hogar y Cocina",
+  "description": "Artículos para el hogar, electrodomésticos y utensilios de cocina.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8dcc9a4ad004540668012"
+  },
+  "name": "Deportes y Aire Libre",
+  "description": "Equipamiento deportivo y artículos para actividades al aire libre.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8dcd3a4ad004540668015"
+  },
+  "name": "Salud y Belleza",
+  "description": "Productos de cuidado personal, cosméticos y suplementos.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8dce5a4ad00454066801b"
+  },
+  "name": "Juguetes y Juegos",
+  "description": "Juguetes para niños, juegos de mesa y artículos de entretenimiento.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8dceea4ad00454066801e"
+  },
+  "name": "Automotriz",
+  "description": "Accesorios, repuestos y herramientas para automóviles.",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c8dcf6a4ad004540668021"
+  },
+  "name": "Libros y Papelería",
+  "description": "Libros, cuadernos, material escolar y de oficina.",
+  "status": true
+}]
