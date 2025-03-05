@@ -5,12 +5,11 @@ import fs from "fs/promises"
 //Agregar categoria
 export const saveCategory  = async(req, res) => {
     try {
-        const { name, description, productsCount} = req.body;
+        const { name, description} = req.body;
 
         const newCategory = new Category({
             name,
-            description,
-            productsCount
+            description
         })
 
         await newCategory.save();
@@ -56,5 +55,50 @@ export const getCategory = async(req,res) =>{
 }
 
 //Actualizar categoria
+export const updateCategory = async (req, res) => {
+    try {
+        const { idCategory } = req.params;
+        const data = req.body;
 
-//Elliminar categroria
+        const category = await Category.findByIdAndUpdate(idCategory, data, { new: true });
+
+        return res.status(200).json({
+            success: true,
+            message: "Categoría actualizada",
+            category
+        });
+    } catch (err) {
+        return res.status(500).json({
+            success: false,
+            message: "Error al actualizar la categoría",
+            error: err.message
+        });
+    }
+};
+
+//Eliminar categroria
+export const deleteCategory = async (req, res) => {
+    try {
+        const { idCategory } = req.params;
+        const category = await Category.findOneAndDelete(idCategory);
+
+        if (!category) {
+            return res.status(404).json({
+                success: false,
+                message: "Categoría no encontrada"
+            });
+        }
+        
+        return res.status(200).json({
+            success: true,
+            message: "Categoría eliminada",
+            category
+        });
+    } catch (err) {
+        return res.status(500).json({
+            success: false,
+            message: "Error al eliminar la categoría",
+            error: err.message
+        });
+    }
+}

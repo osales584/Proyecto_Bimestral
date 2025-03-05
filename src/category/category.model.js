@@ -8,16 +8,12 @@ const categorySchema = Schema({
     },
     description:{
         type: String,
-        required: [true, "Description si reeuired"],
+        required: [true, "Description is required"],
         maxLenght: [80, "Name cannot exceed 80"]
     },
     status:{
         type: Boolean,
         default: true
-    }, 
-    productsCount: {
-        type: Number,
-        default: 0
     }
 },
 {
