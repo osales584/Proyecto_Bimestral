@@ -5,6 +5,7 @@ import cors from "cors"
 import helmet from "helmet"
 import morgan from "morgan"
 import { dbConnection } from "./mongo.js"
+import { createUserAdmin } from "./admin.js"
 import authRoutes from "../src/auth/auth.routes.js"
 import userRoutes from "../src/user/user.routes.js"
 import categoryRoutes from "../src/category/category.routes.js"
@@ -38,6 +39,7 @@ export const initServer = () => {
     try{
         middlewares(app)
         conectarDB()
+        createUserAdmin()
         routes(app)
         app.listen(process.env.PORT)
         console.log(`Server running on port ${process.env.PORT}`)

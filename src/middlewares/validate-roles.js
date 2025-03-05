@@ -13,6 +13,20 @@ export const hasRoles = (...roles) => {
                 message: `Usuario no autorizado, El recurso requiere uno de los siguientes roles: ${roles}`
             })
         }
+
+        if (req.usuario.role === 'ADMIN' && req.params.id === req.usuario.id) {
+            return res.status(403).json({
+                success: false,
+                message: "Un usuario ADMIN no puede modificar a otro ADMIN."
+            });
+        }
+
+        if (req.usuario.role === 'CLIENT' && req.params.id === req.usuario.id) {
+            return res.status(403).json({
+                success: false,
+                message: "Un usuario CLIENT no puede modificar a otro CLIENT."
+            });
+        }
         next()
     }
 }

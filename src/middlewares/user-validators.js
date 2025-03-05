@@ -33,6 +33,11 @@ export const loginValidator = [
     handleErrors
 ]
 
+export const getUsersValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE")
+]
+
 export const getUserByIdValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE"),
@@ -44,14 +49,14 @@ export const getUserByIdValidator = [
 
 export const deleteUserValidator = [
     validateJWT,
-    hasRoles("ADMIN_ROLE"),
+    hasRoles("ADMIN_ROLE", "CLIENT_ROLE"),
     param("uid").isMongoId().withMessage("No es un ID válido de MongoDB"),
     param("uid").custom(userExists),
     validarCampos,
     handleErrors
 ]
 
-export const updateUserValidator = [
+export const updateUserRoleValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE"),
     param("uid", "No es un ID válido").isMongoId(),
@@ -60,7 +65,18 @@ export const updateUserValidator = [
     handleErrors
 ]
 
+export const updateUserValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE", "CLIENT_ROLE"),
+    param("uid", "No es un ID válido").isMongoId(),
+    param("uid").custom(userExists),
+    validarCampos,
+    handleErrors
+]
+
 export const updateProfilePictureValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE"),
     param("uid").isMongoId().withMessage("No es un ID válido de MongoDB"),
     param("uid").custom(userExists),
     validarCampos,
