@@ -8,6 +8,7 @@ import { dbConnection } from "./mongo.js"
 import { createUserAdmin } from "./admin.js"
 import authRoutes from "../src/auth/auth.routes.js"
 import userRoutes from "../src/user/user.routes.js"
+import productRoutes from "../src/product/producto.routes.js"
 import categoryRoutes from "../src/category/category.routes.js"
 
 
@@ -23,6 +24,7 @@ const routes = (app) => {
     app.use("/apiWeb/v1/auth", authRoutes)
     app.use("/apiWeb/v1/user", userRoutes)
     app.use("/apiWeb/v1/category", categoryRoutes)
+    app.use("/apiWeb/v1/product", productRoutes)
 }
 
 const conectarDB = async () =>{

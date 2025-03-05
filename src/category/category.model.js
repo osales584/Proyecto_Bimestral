@@ -14,7 +14,7 @@ const categorySchema = Schema({
     status:{
         type: Boolean,
         default: true
-    }
+    } 
 },
 {
     versionKey: false,
